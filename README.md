@@ -41,7 +41,9 @@ It's super simple!
 ```
 3. npm start
 ```
-
+```
+3. Go to localhost:8080
+```
 And it's on! Enjoy :) 
 
 ### What is planned for the future:
