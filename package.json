@@ -1,7 +1,7 @@
 {
   "name": "react-redux-boilerplate-generator",
   "version": "0.0.1",
-  "description": "This is a generator code for react-redux boilerplate code. Based on webpack. Including scss compiler",
+  "description": "This is a generator code for react-redux boilerplate code. Using webpack-dev-server. Including scss compiler",
   "main": "index.js",
   "scripts": {
     "build": "npm i && node gen.js && rm -rf scripts && rm -rf gen.js",
