@@ -1,6 +1,9 @@
 var fs = require('file-system');
 
-module.exports = function createIndexFiles() {
+module.exports = function createIndexFiles(prefix) {
+    const containerName = `${prefix}Container`;
+    const reducerName = `${prefix}Reducer`;
+
     fs.writeFileSync('index.html', 
 `<!DOCTYPE html>
 <html>
@@ -20,13 +23,13 @@ module.exports = function createIndexFiles() {
 import {render} from 'react-dom'
 import {createStore, applyMiddleware} from 'redux'
 import thunkMiddleware from 'redux-thunk'
-import MainContainer from './Components/MainContainer'
-import MainReducer from './Reducers/MainReducer'
+import ${containerName} from './Components/${containerName}'
+import ${reducerName} from './Reducers/${reducerName}'
 const store = createStore(
-    MainReducer,
+    ${reducerName},
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     applyMiddleware(thunkMiddleware)
 );
 
-render(<MainContainer store={store}/>, document.getElementById('root'));`);
+render(<${containerName} store={store}/>, document.getElementById('root'));`);
 }

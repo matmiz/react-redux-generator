@@ -1,11 +1,14 @@
 var fs = require('file-system');
 
-module.exports = function createComponents() {
-    fs.writeFileSync('src/Components/MainContainer.js', 
+module.exports = function createComponents(prefix) {
+    const containerName = `${prefix}Container`;
+    const actionsName = `${prefix}Actions`;
+
+    fs.writeFileSync(`src/Components/${containerName}.js`, 
 `import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import {testAction} from '../Actions/MainActions'
+import {testAction} from '../Actions/${actionsName}'
 
 const mapStateToProps = (state) => {
     const {test} = state;
@@ -20,7 +23,7 @@ const mapDispatchToProps = (dispatch) => {
     }, dispatch);
 };
 
-class MainContainer extends Component {
+class ${containerName} extends Component {
 
     constructor(props) {
         super(props);
@@ -35,6 +38,6 @@ class MainContainer extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);`
+export default connect(mapStateToProps, mapDispatchToProps)(${containerName});`
     );
 }

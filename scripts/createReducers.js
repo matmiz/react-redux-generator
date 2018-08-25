@@ -1,7 +1,9 @@
 var fs = require('file-system');
 
-module.exports = function createReducers() {
-    fs.writeFileSync('src/Reducers/MainReducer.js', 
+module.exports = function createReducers(prefix) {
+    const reducerName = `${prefix}Reducer`;
+
+    fs.writeFileSync(`src/Reducers/${reducerName}.js`, 
 `import {TEST_ACTION} from '../constants'
 
 const getInitialState = () => {
@@ -10,7 +12,7 @@ const getInitialState = () => {
     } 
 }
 
-const MainReducer = (state = getInitialState(), action) => {
+const ${reducerName} = (state = getInitialState(), action) => {
     switch(action.type) {
         case(TEST_ACTION): 
             return {
@@ -21,7 +23,7 @@ const MainReducer = (state = getInitialState(), action) => {
     }
 }
 
-export default MainReducer;
+export default ${reducerName};
 `
     );
 }

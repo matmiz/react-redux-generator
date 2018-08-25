@@ -1,7 +1,9 @@
 var fs = require('file-system');
 
-module.exports = function createActions() {
-    fs.writeFileSync('src/Actions/MainActions.js', 
+module.exports = function createActions(prefix) {
+    const actionsName = `${prefix}Actions`;
+
+    fs.writeFileSync(`src/Actions/${actionsName}.js`, 
 `import {TEST_ACTION} from '../constants'
 
 
