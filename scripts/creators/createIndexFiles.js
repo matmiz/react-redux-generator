@@ -1,10 +1,10 @@
-var fs = require('file-system');
+var fs = require('fs');
 
-module.exports = function createIndexFiles(prefix) {
+module.exports = (prefix) => {
     const containerName = `${prefix}Container`;
     const reducerName = `${prefix}Reducer`;
 
-    fs.writeFileSync('index.html', 
+    fs.writeFileSync(`../${prefix}/index.html`, 
 `<!DOCTYPE html>
 <html>
 <head lang="en">
@@ -16,9 +16,12 @@ module.exports = function createIndexFiles(prefix) {
     <div id=root></div>
     <script type="text/javascript" src="bundle.js"></script>
 </body>
-</html>`);
+</html>`, (err) => {
+    if (err) throw err;
+    console.log('Created index.html file');
+  });
 
-    fs.writeFileSync('src/index.js',
+    fs.writeFileSync(`../${prefix}/src/index.js`,
 `import React from 'react'
 import {render} from 'react-dom'
 import {createStore, applyMiddleware} from 'redux'
@@ -31,5 +34,8 @@ const store = createStore(
     applyMiddleware(thunkMiddleware)
 );
 
-render(<${containerName} store={store}/>, document.getElementById('root'));`);
+render(<${containerName} store={store}/>, document.getElementById('root'));`, (err) => {
+    if (err) throw err;
+    console.log('Created index.js file');
+  });
 }

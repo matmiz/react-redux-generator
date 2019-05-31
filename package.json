@@ -1,13 +1,10 @@
 {
   "name": "react-redux-boilerplate-generator",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "This is a generator code for react-redux boilerplate code. Using webpack-dev-server. Including scss compiler",
   "main": "index.js",
   "scripts": {
-    "build": "npm i && node gen.js && rm -rf scripts && rm -rf gen.js",
-    "build:dev": "npm run clean && node gen.js",
-    "clean": "rm -rf index.html && rm -rf src",
-    "start": "webpack-dev-server"
+    "create-app": "npm i && node gen.js"
   },
   "keywords": [
     "react",
@@ -15,27 +12,8 @@
     "generator",
     "boilerplate"
   ],
-  "dependencies": {
-    "babel-core": "6.4.5",
-    "babel-loader": "6.2.2",
-    "babel-preset-es2015": "6.3.13",
-    "babel-preset-react": "6.3.13",
-    "babel-preset-stage-2": "6.24.1",
-    "css-loader": "0.28.4",
-    "extract-text-webpack-plugin": "1.0.1",
-    "file-system": "2.2.2",
-    "node-sass": "4.5.3",
-    "prompt-input": "3.0.0",
-    "react": "16.4",
-    "react-dom": "16.4",
-    "react-hot-loader": "1.3.0",
-    "react-redux": "5.0.7",
-    "redux": "3.7.0",
-    "redux-thunk": "2.2.0",
-    "sass-loader": "6.0.6",
-    "style-loader": "0.18.2",
-    "webpack": "1.12.13",
-    "webpack-dev-server": "1.14.1"
+  "devDependencies": {
+    "prompt-input": "3.0.0"
   },
   "author": "Matan Mizrahi",
   "license": "ISC"
