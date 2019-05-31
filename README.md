@@ -39,8 +39,8 @@ It's super simple!
 2. npm run create-app
 ```
 ```
-3. go to the parent folder, and then you will see a new folder named after your prefix in there.
-   Go to this folder and run npm run npm run init
+3. Go to the parent folder, there you will see a new folder named after the prefix you chose for your project.
+   Go to this folder and run "npm run init"
 ```
 ```
 4. Open localhost:8080 in your favorite browser
