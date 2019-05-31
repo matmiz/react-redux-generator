@@ -1,9 +1,9 @@
-var fs = require('file-system');
+var fs = require('fs');
 
 module.exports = function createActions(prefix) {
     const actionsName = `${prefix}Actions`;
 
-    fs.writeFileSync(`src/Actions/${actionsName}.js`, 
+    fs.writeFile(`../${prefix}/src/Actions/${actionsName}.js`, 
 `import {TEST_ACTION} from '../constants'
 
 
@@ -13,6 +13,8 @@ export const testAction = (testData) => dispatch => {
         payload: testData
     })
 }
-`
-    );
+`, (err) => {
+    if (err) throw err;
+    console.log('Created test action');
+  });
 }

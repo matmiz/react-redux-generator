@@ -1,9 +1,9 @@
-var fs = require('file-system');
+var fs = require('fs');
 
 module.exports = function createReducers(prefix) {
     const reducerName = `${prefix}Reducer`;
 
-    fs.writeFileSync(`src/Reducers/${reducerName}.js`, 
+    fs.writeFile(`../${prefix}/src/Reducers/${reducerName}.js`, 
 `import {TEST_ACTION} from '../constants'
 
 const getInitialState = () => {
@@ -24,6 +24,8 @@ const ${reducerName} = (state = getInitialState(), action) => {
 }
 
 export default ${reducerName};
-`
-    );
+` , (err) => {
+    if (err) throw err;
+    console.log('Created test reducer');
+  });
 }

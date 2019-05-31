@@ -7,7 +7,7 @@ This is a boilerplate generator for react-redux projects.
 * Basically, anyone who wants to create a react-redux test project from scrach in a minute :) 
 
 ## What do we have in here?
-Well, this is a simple react-redux project. After starting the app you will have the following file tree (if you chose that your prefix is Main):
+Well, this is a simple react-redux project. After starting the app you will have the following file tree (assuming that you chose "Main" to be your prefix):
 ```
 .
 ├── index.html
@@ -36,13 +36,14 @@ It's super simple!
 1. git clone https://github.com/matmiz/react-redux-generator.git 
 ```
 ```
-2. npm run build
+2. npm run create-app
 ```
 ```
-3. npm start
+3. go to the parent folder, and then you will see a new folder named after your prefix in there.
+   Go to this folder and run npm run npm run init
 ```
 ```
-4. open localhost:8080
+4. Open localhost:8080 in your favorite browser
 ```
 And it's on! At this point you should see on your screen 
 ```
@@ -50,10 +51,15 @@ My Ract+Redux app! Start coding! YEAH
 ```
 If you see this line, it means that a react component with this text was created, adn successfully rendered. 
 
+At any point you can hit ctrl+c to kill the webpack dev server and run npm run server in oreder to launch it again.
+
+
+## Note - this project currently works on unix based environments.
+
 ### What is planned for the future:
 
-Well, first of all, this is currently an alpha version (Let there be bugs! YAY!)
-So here is my future plan (not necessarily in this order)` :
 * Add unit test creation 
 * Add scripts to create files faster (createComponent, createReducer, createAction etc. )
 * Add examples for working components/reducers/actions
+
+### Any comments/suggestions/ideas are welcomed! 

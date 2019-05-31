@@ -1,9 +1,15 @@
 const projectPrefixInput = require('./scripts/user-inputs/projectPrefix');
 const createFolders = require('./scripts/creators/createFolders');
+const createConfig = require('./scripts/creators/createConfig');
 const createFiles = require('./scripts/creators/createFiles');
+const path = require("path");
 
 function createFoldersAndFiles(prefix) {
-    createFolders();
+    console.log('Creating folders...');
+    createFolders(prefix);
+    console.log('Creating configuration files...');
+    createConfig(prefix);
+    console.log('Creating dev files...');
     createFiles(prefix);
 }
 

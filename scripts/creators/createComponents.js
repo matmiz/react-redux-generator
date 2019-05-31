@@ -1,10 +1,10 @@
-var fs = require('file-system');
+var fs = require('fs');
 
 module.exports = function createComponents(prefix) {
     const containerName = `${prefix}Container`;
     const actionsName = `${prefix}Actions`;
 
-    fs.writeFileSync(`src/Components/${containerName}.js`, 
+    fs.writeFile(`../${prefix}/src/Components/${containerName}.js`, 
 `import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
@@ -38,6 +38,8 @@ class ${containerName} extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(${containerName});`
-    );
+export default connect(mapStateToProps, mapDispatchToProps)(${containerName});`, (err) => {
+    if (err) throw err;
+    console.log('Created test component');
+  });
 }
